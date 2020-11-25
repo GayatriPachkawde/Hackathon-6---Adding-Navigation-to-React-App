@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import "../styles/App.css";
 
-function LocationDisplay() {
+export function LocationDisplay() {
   const { pathname } = useLocation();
   return <div data-testid="location-display">{pathname}</div>;
 }
