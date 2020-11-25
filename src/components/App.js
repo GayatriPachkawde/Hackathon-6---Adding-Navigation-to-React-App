@@ -12,7 +12,7 @@ function LocationDisplay() {
   const { pathname } = useLocation();
   return (
     <Router>
-      <div>{pathname}</div>
+      <div data-testid="location-display">{pathname}</div>
     </Router>
   );
 }
