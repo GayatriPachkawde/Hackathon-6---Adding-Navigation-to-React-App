@@ -10,11 +10,7 @@ import "../styles/App.css";
 
 function LocationDisplay() {
   const { pathname } = useLocation();
-  return (
-    <Router>
-      <div data-testid="location-display">{pathname}</div>
-    </Router>
-  );
+  return <div data-testid="location-display">{pathname}</div>;
 }
 
 class App extends Component {
@@ -22,19 +18,20 @@ class App extends Component {
     return (
       <Router>
         <div id="main">
+          <LocationDisplay />
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <LocationDisplay />
+
           <Switch>
             <Route exact path="/">
-              <h3>You are home</h3>
+              <div>You are home</div>
             </Route>
             <Route exact path="/about">
-              <h3>You are on the about page</h3>
+              <div>You are on the about page</div>
             </Route>
-            {/* <Route path="*">
-              <h3>No match</h3>
-            </Route> */}
+            <Route path="*">
+              <div>No match</div>
+            </Route>
           </Switch>
         </div>
       </Router>
